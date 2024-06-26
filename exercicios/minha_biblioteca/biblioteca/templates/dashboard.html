@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Minha Biblioteca Pessoal</title>
+    <style>
+        body {
+            background-color: {{ cor_fundo }};
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .livro {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dashboard - Minha Biblioteca Pessoal</h2>
+    
+    <h3>Preferências de Exibição</h3>
+    <p>Cor de Fundo: {{ cor_fundo }}</p>
+    
+    <h3>Minha Coleção de Livros</h3>
+    {% if livros %}
+        {% for livro in livros %}
+            <div class="livro">
+                <strong>Título:</strong> {{ livro.titulo }}<br>
+                <strong>Autor:</strong> {{ livro.autor }}<br>
+                <strong>Ano de Publicação:</strong> {{ livro.ano_publicacao }}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Você ainda não adicionou nenhum livro à sua coleção.</p>
+    {% endif %}
+    
+    <br>
+    <a href="{% url 'adicionar_livro' %}">Adicionar Livro</a> |
+    <a href="{% url 'personalizar' %}">Personalizar Preferências</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

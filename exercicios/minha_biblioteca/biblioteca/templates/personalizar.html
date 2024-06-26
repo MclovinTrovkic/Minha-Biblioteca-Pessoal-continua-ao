@@ -1,0 +1,20 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Personalizar - Minha Biblioteca Pessoal</title>
+</head>
+<body>
+    <h2>Personalizar Preferências</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="id_cor_fundo">Cor de Fundo:</label>
+        <input type="color" id="id_cor_fundo" name="cor_fundo"><br><br>
+        
+        <button type="submit">Salvar Preferências</button>
+    </form>
+</body>
+</html>

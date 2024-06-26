@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Livro - Minha Biblioteca Pessoal</title>
+</head>
+<body>
+    <h2>Adicionar Livro</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="id_titulo">Título:</label>
+        <input type="text" id="id_titulo" name="titulo"><br><br>
+        
+        <label for="id_autor">Autor:</label>
+        <input type="text" id="id_autor" name="autor"><br><br>
+        
+        <label for="id_ano_publicacao">Ano de Publicação:</label>
+        <input type="number" id="id_ano_publicacao" name="ano_publicacao"><br><br>
+        
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>
